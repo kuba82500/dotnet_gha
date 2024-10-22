@@ -4,5 +4,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: dotnet --version
-      - run: dotnet build actions/console-app
-      - run: dotnet run actions/console-app
+      - run: dotnet build ../actions/console-app
+      - run: dotnet run ../actions/console-app
