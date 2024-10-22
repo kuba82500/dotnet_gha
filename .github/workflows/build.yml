@@ -1,8 +1,23 @@
+name: Build and Run .NET Console App
+
 on: push
 jobs:
-  first-job:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - run: dotnet --version
-      - run: dotnet build ../actions/console-app
-      - run: dotnet run ../actions/console-app
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'
+      - name: Restore dependencies
+        run: dotnet restore dotnet_gha/actions/console-app
+      
+      - name: Build .NET APP
+        run: dotnet build dotnet_gha/actions/console-app --configuration Release
+      
+      - name: Run .NET APP
+        run: dotnet run dotnet_gha/actions/console-app
