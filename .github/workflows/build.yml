@@ -21,7 +21,7 @@ jobs:
         run: dotnet restore ./actions/console-app
       
       - name: Build .NET APP
-        run: dotnet build ./actions/console-app --configuration Release
+        run: dotnet build ./actions/console-app
       
       - name: Run .NET APP
-        run: dotnet run ./actions/console-app/console-app.csproj
+        run: dotnet run --project ./actions/console-app/console-app.csproj
