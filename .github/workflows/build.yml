@@ -13,6 +13,7 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '8.0.x'
+
       - name: List directory
         run: ls -R 
 
@@ -23,4 +24,4 @@ jobs:
         run: dotnet build ./actions/console-app --configuration Release
       
       - name: Run .NET APP
-        run: dotnet run ./actions/console-app/
+        run: dotnet run ./actions/console-app/console-app.csproj
