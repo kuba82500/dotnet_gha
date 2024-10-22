@@ -13,6 +13,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '8.0.x'
+      - name: List directory
+        run: ls -R dotnet_gha/actions/
+
       - name: Restore dependencies
         run: dotnet restore dotnet_gha/actions/console-app
       
