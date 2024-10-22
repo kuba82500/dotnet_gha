@@ -4,3 +4,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: dotnet --version
+      - run: dotnet build
+      - run: dotnet run
