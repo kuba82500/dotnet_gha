@@ -17,10 +17,10 @@ jobs:
         run: ls -R 
 
       - name: Restore dependencies
-        run: dotnet restore dotnet_gha/actions/console-app
+        run: dotnet restore ./actions/console-app
       
       - name: Build .NET APP
-        run: dotnet build dotnet_gha/actions/console-app --configuration Release
+        run: dotnet build ./actions/console-app --configuration Release
       
       - name: Run .NET APP
-        run: dotnet run dotnet_gha/actions/console-app
+        run: dotnet run ./actions/console-app
